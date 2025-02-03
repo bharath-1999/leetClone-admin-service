@@ -1,3 +1,5 @@
+const{StatusCodes} =  require('http-status-codes')
+
 function pingProblemcontroller(req, res) {
   res.send("pong");
 }
