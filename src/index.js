@@ -3,6 +3,7 @@ const bodyParser = require('body-parser');
  
 const { PORT} = require('./config/server.config');
 const apiRouter = require('./routes');
+const errorHandler = require('./utils/errorHandler');
 const app = express();
 
 app.use(bodyParser.json());
@@ -12,6 +13,9 @@ app.get('/ping',(req,res)=>{
     return res.json({message:`Admin  service is alive`})
 })
 app.use('/api', apiRouter);
+
+// last middleware to handle errors
+app.use(errorHandler)
 app.listen(PORT,()=>{
     console.log(`Server is listening on port ${PORT}`)
 })
