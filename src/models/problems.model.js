@@ -11,7 +11,7 @@ const ProblemSchema = new schema({
         required: [true, 'Discription is required']
     },
     difficultylevel:{
-        type: string,
+        type: String,
         enum: ['easy','medium','hard'],
         required: [true, 'Difficultylevel is required'],
         default: 'easy'
